@@ -1,0 +1,14 @@
+<h2>Preguntas</h2>
+<form (ngSubmit)="agregarPregunta()">
+  <input type="text" [(ngModel)]="nuevoTitulo" name="titulo" placeholder="Título" required>
+  <textarea [(ngModel)]="nuevoContenido" name="contenido" placeholder="Contenido" required></textarea>
+  <button type="submit">Agregar Pregunta</button>
+</form>
+
+<ul>
+  <li *ngFor="let pregunta of preguntas">
+    <h3>{{ pregunta.titulo }}</h3>
+    <p>{{ pregunta.contenido }}</p>
+    <a [routerLink]="['/respuestas', pregunta.id]">Ver respuestas</a>
+  </li>
+</ul>
