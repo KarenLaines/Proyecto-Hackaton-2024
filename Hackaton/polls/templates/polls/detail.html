@@ -1,0 +1,52 @@
+<!-- 
+<h1>{{ pregunta.titulo }}</h1>
+<form action="{% url 'polls:vote' pregunta.id %}" method="post">
+    {% csrf_token %}
+    {% for respuesta in pregunta.respuestas.all %}
+        <input type="radio" name="respuesta" id="respuesta{{ forloop.counter }}" value="{{ respuesta.id }}">
+        <label for="respuesta{{ forloop.counter }}">{{ respuesta.contenido }}</label><br>
+    {% empty %}
+        <p>No hay respuestas disponibles.</p>
+    {% endfor %}
+    <input type="submit" value="Votar">
+</form> -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pregunta.titulo }}</title>
+    <link rel="stylesheet" href="{% static 'polls/styles.css' %}">
+</head>
+<body>
+
+    <a href="{% url 'polls:index' %}" class="back-button">Regresar al Inicio</a>
+    <br><br><br>
+    <div class="container">
+        <h1>{{ pregunta.titulo }}</h1>
+        <p>{{ pregunta.contenido }}</p>
+
+
+        <h3>Comentarios:</h3>
+        <form action="{% url 'polls:add_comment' pregunta.id %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="pregunta_id" value="{{ pregunta.id }}">
+            <textarea name="comentario" rows="4" cols="50" placeholder="Escribe tu comentario aquí..."></textarea><br>
+            <input type="submit" value="Comentar">
+        </form>
+
+        <h3>Respuestas:</h3>
+        <div class="comentarios">
+            {% for comentario in pregunta.comentarios.all %}
+                <div class="comentario">
+                    <p><strong>{{ comentario.usuario.username }}:</strong> {{ comentario.contenido }}</p>
+                    <p><small>Publicado el {{ comentario.fecha_publicacion }}</small></p>
+                </div>
+            {% empty %}
+                <p>No hay comentarios todavía.</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+

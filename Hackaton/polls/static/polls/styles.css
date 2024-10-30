@@ -1,0 +1,148 @@
+/* Estilos generales de la página */
+body {
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #e0e4e8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1, h3 {
+    color: #2d3e50;
+    font-weight: 600;
+}
+
+/* Área de comentarios */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    resize: none;
+    font-size: 1em;
+    margin-bottom: 12px;
+    background-color: #f9fafb;
+}
+
+/* Sección de comentarios */
+.comentarios {
+    margin-top: 25px;
+}
+
+.comentario {
+    padding: 15px;
+    background-color: #f9fafc;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+.comentario:hover {
+    background-color: #f1f5f9;
+}
+
+/* Botón de regreso */
+.back-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 10px 16px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #43a047;
+}
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafc;
+}
+
+.container-main {
+    display: flex;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.container-izquierda, .container-derecha {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #3b5998;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.pregunta-item {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f0f2f5;
+    border-radius: 5px;
+}
+
+.pregunta-item a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pregunta-item a:hover {
+    text-decoration: underline;
+}
+
+form input[type="text"], form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+    padding: 10px;
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+    background-color: #3b82f6;
+}
+
+

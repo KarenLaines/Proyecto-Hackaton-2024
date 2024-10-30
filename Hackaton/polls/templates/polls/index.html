@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de Preguntas</title>
+    <link rel="stylesheet" href="{% static 'polls/styles.css' %}">
+</head>
+<body>
+    <div class="container-main">
+        <!-- Container izquierdo para la lista de preguntas -->
+        <div class="container-izquierda">
+            <h2>Lista de Preguntas</h2>
+            {% for pregunta in latest_pregunta_list %}
+                <div class="pregunta-item">
+                    <a href="{% url 'polls:detail' pregunta.id %}">{{ pregunta.titulo }}</a>
+                </div>
+            {% empty %}
+                <p>No hay preguntas disponibles.</p>
+            {% endfor %}
+        </div>
+
+        <!-- Container derecho para agregar nuevas preguntas -->
+        <div class="container-derecha">
+            <h2>Agregar Nueva Pregunta</h2>
+            <form action="{% url 'polls:add_question' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="titulo" placeholder="Título de la pregunta" required><br>
+                <textarea name="contenido" rows="4" placeholder="Descripción o contenido de la pregunta"></textarea><br>
+                <input type="submit" value="Agregar Pregunta">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
